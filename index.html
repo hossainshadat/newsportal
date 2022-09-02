@@ -1,15 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Global News Portal || Proggramming Hero Assignment 6</title>
+    <!-- Bootstrap CDN  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <h1>Global News</h1>
+<body class="bg-success mt-4 bg-opacity-10">
+    <header class="container">
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand fs-1 fw-bold">Global News</a>
+                <div class="d-flex fs-5 fw-bolder">
+                    <a class="pe-5" href="index.html">News</a>
+                    <a href="pages/blog.html">Blog</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mt-5 container">
+        <!-- Catagoy Tab  -->
+        <ul class="nav nav-pills nav-fill mb-5">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Much longer nav link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Disabled</a>
+            </li>
+        </ul>
+
+        <!-- Category Item Number  -->
+
+        <nav class="navbar bg-light mb-4">
+            <div class="container">
+                <p class="my-auto p-2">4 items found for category Entertainment</p>
+            </div>
+        </nav>
+
+        <!-- Sorting Nav  -->
+        <nav class="navbar navbar-expand-lg mb-5">
+            <div class="container-fluid">
+                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Sort by view :</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Default
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="d-flex" role="search">
+                        <button class="btn btn-outline-success me-4 active" type="button">Todays Pick</button>
+                        <button class="btn btn-outline-success" type="button">Trending</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Card  -->
+
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex">
+                                <img class="me-3 " src="img/author.svg" alt="Author" srcset="">
+                                <div class="d-flex flex-column align-items-start ">
+                                    <p style="margin-bottom: -7px;">Author Name</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center">
+                                <img class="me-2" src="img/eye.svg" alt="View" style="width: 20px;">
+                                <p class="card-text">15M</p>
+                            </div>
+                            <button class="btn btn-outline-success" type="button">Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex">
+                                <img class="me-3 " src="img/author.svg" alt="Author" srcset="">
+                                <div class="d-flex flex-column align-items-start ">
+                                    <p style="margin-bottom: -7px;">Author Name</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center">
+                                <img class="me-2" src="img/eye.svg" alt="View" style="width: 20px;">
+                                <p class="card-text">15M</p>
+                            </div>
+                            <button class="btn btn-outline-success" type="button">Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/news.js"></script>
 </body>
 
 </html>
