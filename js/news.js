@@ -41,7 +41,7 @@ const displayNews = (news, categoryName) => {
   newsContainer.innerHTML = "";
 
   const categoryItemNumber = document.getElementById("category-item-number");
-  categoryItemNumber.innerText = news.length;
+  categoryItemNumber.innerText = news.length ? news.length : "No news";
 
   news.forEach((item) => {
     const div = document.createElement("div");
@@ -70,7 +70,7 @@ const displayNews = (news, categoryName) => {
                     </div>
                     <div class="col-lg-9 col-12">
                         <div class="card-body">
-                            <h5 class="card-title">${
+                            <h5 class="card-title fw-bold fs-5">${
                               title !== null ? title : "No data available"
                             }</h5>
                             <p class="card-text mb-4">${
@@ -87,11 +87,11 @@ const displayNews = (news, categoryName) => {
                                         <p style="margin-bottom: -7px;">${
                                           author.name
                                             ? author.name
-                                            : "No Author"
+                                            : "No Data Available"
                                         }</p>
                                         <p class="card-text"><small class="text-muted">${
                                           author.published_date == null
-                                            ? "No Published Date"
+                                            ? "No Data Available"
                                             : author.published_date
                                         }</small>
                                         </p>

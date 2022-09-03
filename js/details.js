@@ -30,7 +30,7 @@ const detailNews = (data) => {
   <div class='col-6 '>Published Date: ${
     author.published_date == null ? "No Published Date" : author.published_date
   }</div>
-  <div class='col-6'>Rating Count: ${total_view ? total_view : 0}</div>
+  <div class='col-6'>Rating Count: ${total_view ? total_view : "0"}</div>
   </div>
     `;
 };

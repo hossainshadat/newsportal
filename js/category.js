@@ -1,10 +1,14 @@
 const loadCatagory = async () => {
-  const res = await fetch(
-    "https://openapi.programming-hero.com/api/news/categories"
-  );
-  const data = await res.json();
-  const newsData = data.data.news_category;
-  return newsData;
+  try {
+    const res = await fetch(
+      "https://openapi.programming-hero.com/api/news/categories"
+    );
+    const data = await res.json();
+    const newsData = data.data.news_category;
+    return newsData;
+  } catch (error) {
+    return error;
+  }
 };
 
 //  Category view

@@ -9,20 +9,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-success mt-5 bg-opacity-10">
+<body class="container bg-success my-5 bg-opacity-10">
     <header class="container">
-        <nav class="navbar bg-light">
+        <nav class="navbar bg-light px-sm-4">
             <div class="container-fluid">
                 <a class="navbar-brand fs-1 fw-bold" href="index.html">Global News</a>
                 <div class="d-flex fs-5 fw-bolder">
-                    <a class="pe-5" href="index.html">News</a>
+                    <a class="pe-sm-5 pe-2" href="/index.html">News</a>
                     <a href="pages/blog.html">Blog</a>
                 </div>
             </div>
         </nav>
     </header>
-
-    <main class="mt-5 container">
+    <hr>
+    <main class="mt-5">
         <!-- Catagoy Tab  -->
         <ul id="category-container" class="nav nav-pills nav-fill mb-5">
 
@@ -32,8 +32,9 @@
 
         <nav class="navbar bg-light mb-4">
             <div class="container">
-                <p class="my-auto p-2"> <span id="category-item-number"></span> items found for category <span
-                        id="category-item-name"></span> </p>
+                <p class="my-auto p-2"> <span class="fw-bold" id="category-item-number"></span> items found for category
+                    <span class="fw-bold" id="category-item-name"></span>
+                </p>
             </div>
         </nav>
 
