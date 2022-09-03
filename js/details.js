@@ -12,7 +12,8 @@ const loadDetailNews = async (id) => {
 const detailNews = (data) => {
   const modalContainer = document.getElementById("modal-body");
   modalContainer.innerHTML = "";
-  console.log(data);
+  // console.log(data);
+
   const { title, details, author } = data;
 
   modalContainer.innerHTML = `
@@ -22,7 +23,9 @@ const detailNews = (data) => {
   } ">
         <div class="card-body">
         <h5 class="card-title">${author.name}</h5>
-        <p class="card-text">${details}</p>
+        <p class="card-text">${
+          details.length > 600 ? details.slice(0, 350) : details
+        }</p>
         </div>
         <div class='row ps-3'>
   <div class='col-6 '>Published Date: ${author.published_date}</div>
