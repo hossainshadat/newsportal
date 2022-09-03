@@ -2,7 +2,7 @@ const loadDetailNews = async (id) => {
   const res = await fetch(
     `https://openapi.programming-hero.com/api/news/${id}`
   );
-  //   console.log(res);
+
   const data = await res.json();
 
   const newsData = data.data[0];
@@ -12,7 +12,6 @@ const loadDetailNews = async (id) => {
 const detailNews = (data) => {
   const modalContainer = document.getElementById("modal-body");
   modalContainer.innerHTML = "";
-  // console.log(data);
 
   const { title, details, author, total_view, thumbnail_url } = data;
 

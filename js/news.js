@@ -8,7 +8,7 @@ const loadNews = async (id, categoryName) => {
     const newsData = data.data;
 
     displayNews(newsData, categoryName);
-    // console.log(categoryName);
+
     return newsData;
   } catch (error) {
     console.log(error);

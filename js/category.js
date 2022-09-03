@@ -10,11 +10,9 @@ const loadCatagory = async () => {
 //  Category view
 const categoryView = async () => {
   const categories = await loadCatagory();
-  // console.log(categories);
 
   const categoryContainer = document.getElementById("category-container");
   categories.forEach((category) => {
-    // console.log(category);
     const li = document.createElement("li");
     li.classList.add("nav-item", "liItem");
     const { category_name, category_id } = category;
