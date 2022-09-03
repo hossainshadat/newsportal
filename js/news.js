@@ -1,4 +1,4 @@
-const loadNews = async (id) => {
+const loadNews = async (id, categoryName) => {
   try {
     const res = await fetch(
       `https://openapi.programming-hero.com/api/news/category/${id}`
@@ -7,8 +7,8 @@ const loadNews = async (id) => {
 
     const newsData = data.data;
 
-    displayNews(newsData);
-    // newsData.forEach(data=> console.log(data))
+    displayNews(newsData, categoryName);
+    // console.log(categoryName);
     return newsData;
   } catch (error) {
     console.log(error);
@@ -18,11 +18,14 @@ const loadNews = async (id) => {
 
 loadNews("08");
 
-const displayNews = (news) => {
+const displayNews = (news, categoryName) => {
+  const showCatagoryName = document.getElementById("category-item-name");
+  showCatagoryName.innerText = categoryName ? categoryName : "All News";
+
   const spinner = document.getElementById("spinner");
   const notFound = document.getElementById("not-found");
+
   spinner.classList.remove("d-none");
-  console.log(news);
 
   if (news.length == 0) {
     notFound.classList.remove("d-none");

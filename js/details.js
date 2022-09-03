@@ -12,7 +12,7 @@ const loadDetailNews = async (id) => {
 const detailNews = (data) => {
   const modalContainer = document.getElementById("modal-body");
   modalContainer.innerHTML = "";
-  console.log(data);
+  // console.log(data);
 
   const { title, details, author, total_view, thumbnail_url } = data;
 

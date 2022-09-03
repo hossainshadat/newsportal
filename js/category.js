@@ -10,7 +10,7 @@ const loadCatagory = async () => {
 //  Category view
 const categoryView = async () => {
   const categories = await loadCatagory();
-  console.log(categories);
+  // console.log(categories);
 
   const categoryContainer = document.getElementById("category-container");
   categories.forEach((category) => {
@@ -20,7 +20,7 @@ const categoryView = async () => {
     const { category_name, category_id } = category;
 
     li.innerHTML = `
-                <a onclick="loadNews('${category_id}')" 
+                <a onclick="loadNews('${category_id}','${category_name}')" 
                 class="nav-link" href="#">${category_name}</a>
     `;
 
