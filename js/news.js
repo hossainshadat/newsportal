@@ -15,10 +15,18 @@ const loadNews = async (id) => {
   }
 };
 
-// loadNews();
+loadNews("08");
 
 const displayNews = (news) => {
-  //   const news = await loadNews();
+  const spinner = document.getElementById("spinner");
+  const notFound = document.getElementById("not-found");
+  spinner.classList.remove("d-none");
+  console.log(news);
+
+  if (news.length == 0) {
+    notFound.classList.remove("d-none");
+    spinner.classList.add("d-none");
+  }
   // sorting
   news.sort((a, b) => {
     return b.total_view - a.total_view;
@@ -29,16 +37,15 @@ const displayNews = (news) => {
   newsContainer.innerHTML = "";
 
   const categoryItemNumber = document.getElementById("category-item-number");
-  // categoryItemNumber.innerHTML = ''
-  console.log(news.length);
-
   categoryItemNumber.innerText = news.length;
 
   news.forEach((item) => {
     const div = document.createElement("div");
 
-    div.classList.add("card", "mb-3");
+    div.classList.add("card", "mb-5", "shadow");
 
+    spinner.classList.add("d-none");
+    notFound.classList.add("d-none");
     // console.log(item);
     const {
       thumbnail_url: thumbnail,
@@ -51,22 +58,22 @@ const displayNews = (news) => {
 
     div.innerHTML = `
     
-                <div class="row g-0">
-                    <div class="col-md-3">
+                <div class="row g-0 p-4">
+                    <div class="col-lg-3 col-12">
                         <img src="${thumbnail}" class="img-fluid rounded-start" alt=${
       title ? title : "No data available"
-    }>
+    } >
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-lg-9 col-12">
                         <div class="card-body">
                             <h5 class="card-title">${
                               title !== null ? title : "No data available"
                             }</h5>
-                            <p class="card-text">${
+                            <p class="card-text mb-4">${
                               details.length > 1000
                                 ? details.slice(0, 700)
                                 : details
-                            }</p>
+                            }${"..."}</p>
                             <div class="d-flex justify-content-between">
                                 <div class="d-flex">
                                     <img class="me-3 " src="${
@@ -74,12 +81,14 @@ const displayNews = (news) => {
                                     }" alt="Author" srcset="" style="height: 50px; width: 50px; border-radius:50%">
                                     <div class="d-flex flex-column align-items-start ">
                                         <p style="margin-bottom: -7px;">${
-                                          author.name == null
-                                            ? "No data available"
-                                            : author.name
+                                          author.name
+                                            ? author.name
+                                            : "No Author"
                                         }</p>
                                         <p class="card-text"><small class="text-muted">${
-                                          author.published_date
+                                          author.published_date == null
+                                            ? "No Published Date"
+                                            : author.published_date
                                         }</small>
                                         </p>
                                     </div>
@@ -88,9 +97,7 @@ const displayNews = (news) => {
                                 <div class="d-flex align-items-center">
                                     <img class="me-2" src="img/eye.svg" alt="View" style="width: 20px;">
                                     <p class="card-text"><span>${
-                                      total_view == null
-                                        ? "No data available"
-                                        : total_view
+                                      total_view ? total_view : 0
                                     }</span>M</p>
                                 </div>
                                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#product-details" onclick="loadDetailNews( '${_id}')">

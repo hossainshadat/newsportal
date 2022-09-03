@@ -12,24 +12,26 @@ const loadDetailNews = async (id) => {
 const detailNews = (data) => {
   const modalContainer = document.getElementById("modal-body");
   modalContainer.innerHTML = "";
-  // console.log(data);
+  console.log(data);
 
-  const { title, details, author } = data;
+  const { title, details, author, total_view, thumbnail_url } = data;
 
   modalContainer.innerHTML = `
     <div class="card">
-        <img src="${author.img}" class="card-img-top" alt=${
+        <img src="${thumbnail_url}" class="card-img-top" alt=${
     title ? title : "Not Available"
-  } ">
+  } " >
         <div class="card-body">
-        <h5 class="card-title">${author.name}</h5>
+        <h5 class="card-title">${author.name ? author.name : "No Author"}</h5>
         <p class="card-text">${
           details.length > 600 ? details.slice(0, 350) : details
-        }</p>
+        }${"..."}</p>
         </div>
         <div class='row ps-3'>
-  <div class='col-6 '>Published Date: ${author.published_date}</div>
-  <div class='col-6'>Rating Count: ${author.total_view}</div>
+  <div class='col-6 '>Published Date: ${
+    author.published_date == null ? "No Published Date" : author.published_date
+  }</div>
+  <div class='col-6'>Rating Count: ${total_view ? total_view : 0}</div>
   </div>
     `;
 };

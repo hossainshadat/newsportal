@@ -26,29 +26,6 @@ const categoryView = async () => {
 
     categoryContainer.appendChild(li);
   });
-
-  const categoryItemName = document.getElementById("category-item-name");
-  // categoryItemNumber.innerHTML = ''
-  console.log(news.length);
-
-  categoryItemName.innerText = ` ${categories.category_name}`;
 };
 
 categoryView();
-
-// category : https://www.youtube.com/watch?v=6nRPrwmxkkE
-
-// const liItem = document.querySelectorAll('.liItem')
-
-// liItem.forEach(li=> {
-//   li.onclick = function() {
-//     console.log(li)
-//     // active
-//     liItem.forEach(li => {
-//       li.className = ''
-//     })
-//     li.className = 'active'
-//   }
-
-//   console.log(li.textContent)
-// })
