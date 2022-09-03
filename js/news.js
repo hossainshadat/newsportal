@@ -11,6 +11,7 @@ const loadNews = async (id) => {
     // newsData.forEach(data=> console.log(data))
     return newsData;
   } catch (error) {
+    console.log(error);
     return error;
   }
 };
@@ -58,11 +59,11 @@ const displayNews = (news) => {
 
     div.innerHTML = `
     
-                <div class="row g-0 p-4">
+                <div class="row g-0 p-md-4">
                     <div class="col-lg-3 col-12">
                         <img src="${thumbnail}" class="img-fluid rounded-start" alt=${
       title ? title : "No data available"
-    } >
+    } style="width: 100%;" >
                     </div>
                     <div class="col-lg-9 col-12">
                         <div class="card-body">
@@ -100,9 +101,8 @@ const displayNews = (news) => {
                                       total_view ? total_view : 0
                                     }</span>M</p>
                                 </div>
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#product-details" onclick="loadDetailNews( '${_id}')">
-                                Product Details</button>
-                                    </div>
+                                
+                                    <img data-bs-toggle="modal" data-bs-target="#product-details" onclick="loadDetailNews( '${_id}')" src="img/arrow.svg" alt="Detail" srcset="">
                             </div>
                         </div>
                     </div>
