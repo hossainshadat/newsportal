@@ -75,7 +75,7 @@ const displayNews = (news) => {
                                 ? details.slice(0, 700)
                                 : details
                             }${"..."}</p>
-                            <div class="d-flex justify-content-between">
+                            <div class="d-flex justify-content-between ">
                                 <div class="d-flex">
                                     <img class="me-3 " src="${
                                       author.img
@@ -102,7 +102,7 @@ const displayNews = (news) => {
                                     }</span>M</p>
                                 </div>
                                 
-                                    <img data-bs-toggle="modal" data-bs-target="#product-details" onclick="loadDetailNews( '${_id}')" src="img/arrow.svg" alt="Detail" srcset="">
+                                    <img role="button" data-bs-toggle="modal" data-bs-target="#product-details" onclick="loadDetailNews( '${_id}')" src="img/arrow.svg" alt="Detail" srcset="">
                             </div>
                         </div>
                     </div>

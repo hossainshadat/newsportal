@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global News Portal || Proggramming Hero Assignment 6</title>
-</head>
-
-<body>
-    <h1>Global News Blog</h1>
-</body>
-
-</html>
-
 <!doctype html>
 <html lang="en">
 
@@ -25,8 +9,169 @@
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 
-<body>
-    <h1>Global News Blog</h1>
+<body class="bg-success bg-opacity-10 container my-5">
+    <header class="container my-5">
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand fs-1 fw-bold">Global News</a>
+                <div class="d-flex fs-5 fw-bolder">
+                    <a class="pe-5" href="../index.html">News</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <h1 class="fs-1 text-center fw-bold">Question Answer</h1>
+
+    <main class="my-5">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button fs-5 fw-bold" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Difference between var, let and const keywords in JavaScript
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>var</strong>
+                        The scope is global when a var variable is declared outside a function. This means that any
+                        variable that is declared with var outside a function block is available for use in the whole
+                        window.
+
+                        var is function scoped when it is declared within a function. This means that it is available
+                        and can be accessed only within that function. <br>
+                        <strong>let</strong>
+                        A block is a chunk of code bounded by {}. A block lives in curly braces. Anything within curly
+                        braces is a block.
+
+                        So a variable declared in a block with let is only available for use within that block. Let me
+                        explain this with an example:
+
+                        <code>
+                            let greeting = "say Hi";
+                            let times = 4;
+
+                            if (times > 3) {
+                                    let hello = "say Hello instead";
+                                    console.log(hello);// "say Hello instead"
+                                }
+                            console.log(hello) // hello is not defined
+                        </code>
+
+                        <br>
+                        <strong>const</strong>
+                        Variables declared with the const maintain constant values. const declarations share some
+                        similarities with let declarations.
+
+                        <strong>const declarations are block scoped</strong> const declarations are block scoped
+                        Like let declarations, const declarations can only be accessed within the block they were
+                        declared.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Differences Between Arrow and Regular Functions
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>1. Syntax</strong> <br>
+
+                        The arrow function example above allows a developer to accomplish the same result with fewer
+                        lines of code and approximately half the typing. <br>
+
+
+
+                        <strong>2. Arguments binding </strong><br>
+                        Arrow functions do not have an arguments binding. However, they have access to the arguments
+                        object of the closest non-arrow parent function. Named and rest parameters are heavily relied
+                        upon to capture the arguments passed to arrow functions. <br>
+
+                        <strong>3. Use of this keyword </strong> <br>
+                        Unlike regular functions, arrow functions do not have their own this. The value of this inside
+                        an arrow function remains the same throughout the lifecycle of the function and is always bound
+                        to the value of this in the closest non-arrow parent function.<br>
+
+                        <strong>4. Using new keyword </strong> <br>
+                        Regular functions created using function declarations or expressions are constructible and
+                        callable. Since regular functions are constructible, they can be called using the new keyword.
+
+                        However, the arrow functions are only callable and not constructible, i.e arrow functions can
+                        never be used as constructor functions. Hence, they can never be invoked with the new
+                        keyword.<br>
+
+                        <strong>5. No duplicate named parameters</strong> <br>
+                        Arrow functions can never have duplicate named parameters, whether in strict or non-strict mode.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed fs-5 fw-bold" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Why and when to use forEach, map, filter, reduce, and find in JavaScript.
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>When to use forEach?</strong>
+                        .forEach() is great you need to execute a function for each individual element in an array. Good
+                        practice is that you should use .forEach() when you can’t use other array methods to accomplish
+                        your goal. I know this may sound vague, but .forEach() is a generic tool… only use it when you
+                        can’t use a more specialized tool.
+                        <br>
+                        <strong>When to use map? </strong>
+                        .map() when you want to transform elements in an array.
+                        <br>
+                        <strong>When to use filter?</strong>
+                        .filter() when you want to select a subset of multiple elements from an array.
+                        <br>
+                        <strong> When to use find?</strong>
+                        .find() When you want to select a single element from an array.
+                        <br>
+                        <strong>When to use reduce?</strong>
+                        .reduce() when you want derive a single value from multiple elements in an array.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed  fs-5 fw-bold" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Template literals (Template strings)
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Template literals are enclosed by backtick (`) characters instead of double or single quotes.
+
+                        Along with having normal strings, template literals can also contain other parts called
+                        placeholders, which are embedded expressions delimited by a dollar sign and curly braces:
+                        ${expression}. The strings and placeholders get passed to a function — either a default
+                        function, or a function you supply. The default function (when you don't supply your own) just
+                        performs string interpolation to do substitution of the placeholders and then concatenate the
+                        parts into a single string.
+
+                        To supply a function of your own, precede the template literal with a function name; the result
+                        is called a tagged template. In that case, the template literal is passed to your tag function,
+                        where you can then perform whatever operations you want on the different parts of the template
+                        literal.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
