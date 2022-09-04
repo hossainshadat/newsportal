@@ -70,14 +70,14 @@ const displayNews = (news, categoryName) => {
                     </div>
                     <div class="col-lg-9 col-12">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold fs-5">${
+                            <h5 class="card-title fw-bold fs-5 pb-md-4">${
                               title !== null ? title : "No data available"
                             }</h5>
-                            <p class="card-text mb-4">${
-                              details.length > 1000
-                                ? details.slice(0, 700)
+                            <p class="card-text pb-md-4">${
+                              details.length > 300
+                                ? details.slice(0, 300) + "..."
                                 : details
-                            }${"..."}</p>
+                            }</p>
                             <div class="d-flex justify-content-between ">
                                 <div class="d-flex">
                                     <img class="me-3 " src="${
@@ -109,8 +109,7 @@ const displayNews = (news, categoryName) => {
                             </div>
                         </div>
                     </div>
-                </div>
-    
+              </div>                             
     `;
 
     newsContainer.appendChild(div);

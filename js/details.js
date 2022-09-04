@@ -23,8 +23,8 @@ const detailNews = (data) => {
         <div class="card-body">
         <h5 class="card-title">${author.name ? author.name : "No Author"}</h5>
         <p class="card-text">${
-          details.length > 600 ? details.slice(0, 350) : details
-        }${"..."}</p>
+          details.length > 600 ? details.slice(0, 350) + "..." : details
+        }</p>
         </div>
         <div class='row ps-3'>
   <div class='col-6 '>Published Date: ${
